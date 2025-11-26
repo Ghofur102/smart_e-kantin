@@ -6,6 +6,7 @@ import 'screens/home_screen.dart';
 import 'screens/cart_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'pages/login_page.dart';
 import 'pages/profile_page.dart';
 
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final User? user = FirebaseAuth.instance.currentUser;
     return MaterialApp(
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
@@ -52,16 +52,26 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginScreen(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(body: Center(child: CircularProgressIndicator()));
+          }
+          final user = snapshot.data;
+          if (user != null) {
+            return const ProfilePage();
+          }
+          return const LoginPage();
+        },
+      ),
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
         '/home': (context) => const HomeScreen(),
         '/cart': (context) => const CartScreen(),
       },
-      title: 'Smart E-Kantin',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: user != null ? const ProfilePage() : const LoginPage(),
+      // title, theme and routes already set above
     );
   }
 }
