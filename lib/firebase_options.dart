@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -14,6 +15,7 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -40,48 +42,48 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAIWS9AnGVe5kffXPUD8qajCPjcU8t5C3s',
-    appId: '1:1041559862316:android:84d2919f42529eebf46589',
-    messagingSenderId: '1041559862316',
-    projectId: 'uas-praktikum-mobile-dev',
-    storageBucket: 'uas-praktikum-mobile-dev.firebasestorage.app',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_ANDROID']!,
+    appId: dotenv.env['APP_ID_ANDORID']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_ANDROID']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_ANDROID']!,
   );
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB5KU_G7iE9XIxHrwKl0ZzMNhiyOfsKgBo',
-    appId: '1:1041559862316:web:e0687af09378cf7bf46589',
-    messagingSenderId: '1041559862316',
-    projectId: 'uas-praktikum-mobile-dev',
-    authDomain: 'uas-praktikum-mobile-dev.firebaseapp.com',
-    storageBucket: 'uas-praktikum-mobile-dev.firebasestorage.app',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_WEB_WINDOWS']!,
+    appId: dotenv.env['APP_ID_WEB_WINDOWS']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_WEB_WINDOWS']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+    authDomain: dotenv.env['AUTH_DOMAIN_WEB_WINDOWS']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_WEB_WINDOWS']!,
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAGKWFjNW58cHar1HFmP6XrGdqG5tW5VmM',
-    appId: '1:1041559862316:ios:027b39290fbce210f46589',
-    messagingSenderId: '1041559862316',
-    projectId: 'uas-praktikum-mobile-dev',
-    storageBucket: 'uas-praktikum-mobile-dev.firebasestorage.app',
-    iosBundleId: 'com.example.uasPraktikum',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_APPLE']!,
+    appId: dotenv.env['APP_ID_APPLE']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_APPLE']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_APPLE'],
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'],
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAGKWFjNW58cHar1HFmP6XrGdqG5tW5VmM',
-    appId: '1:1041559862316:ios:027b39290fbce210f46589',
-    messagingSenderId: '1041559862316',
-    projectId: 'uas-praktikum-mobile-dev',
-    storageBucket: 'uas-praktikum-mobile-dev.firebasestorage.app',
-    iosBundleId: 'com.example.uasPraktikum',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_APPLE']!,
+    appId: dotenv.env['APP_ID_APPLE']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_APPLE']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_APPLE'],
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'],
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyB5KU_G7iE9XIxHrwKl0ZzMNhiyOfsKgBo',
-    appId: '1:1041559862316:web:ed3b77d55ba7dc86f46589',
-    messagingSenderId: '1041559862316',
-    projectId: 'uas-praktikum-mobile-dev',
-    authDomain: 'uas-praktikum-mobile-dev.firebaseapp.com',
-    storageBucket: 'uas-praktikum-mobile-dev.firebasestorage.app',
+  static FirebaseOptions windows = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_WEB_WINDOWS']!,
+    appId: dotenv.env['APP_ID_WEB_WINDOWS']!,
+    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_WEB_WINDOWS']!,
+    projectId: dotenv.env['PROJECT_ID']!,
+    authDomain: dotenv.env['AUTH_DOMAIN_WEB_WINDOWS']!,
+    storageBucket: dotenv.env['STORAGE_BUCKET_WEB_WINDOWS']!,
   );
 
 }
