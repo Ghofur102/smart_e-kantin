@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_large"
+    android:background="@color/background">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvRegisterHeader_hud"
+        style="@style/TextHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Full Name Input -->
+    <EditText
+        android:id="@+id/etFullName_hud"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/full_name_hint"
+        android:inputType="text"
+        android:padding="@dimen/padding_medium"
+        android:background="@color/surface"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintTop_toBottomOf="@id/tvRegisterHeader_hud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Email Kampus Input -->
+    <EditText
+        android:id="@+id/etEmailReg_hud"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/email_kampus_hint"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/padding_medium"
+        android:background="@color/surface"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/etFullName_hud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etPasswordReg_hud"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:padding="@dimen/padding_medium"
+        android:background="@color/surface"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/etEmailReg_hud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Confirm Password Input -->
+    <EditText
+        android:id="@+id/etPasswordConfirm_hud"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/confirm_password_hint"
+        android:inputType="textPassword"
+        android:padding="@dimen/padding_medium"
+        android:background="@color/surface"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordReg_hud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister_hud"
+        style="@style/ButtonPrimary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/btn_register"
+        android:layout_marginTop="@dimen/margin_large"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordConfirm_hud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
