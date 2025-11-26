@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart E-Kantin</string>
+    <string name="app_logo">Smart E-Kantin Logo</string>
+    
+    <!-- Login Screen -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="register_link">Belum punya akun? Register</string>
+    
+    <!-- Register Screen -->
+    <string name="register_title">Register</string>
+    <string name="full_name_hint">Nama Lengkap</string>
+    <string name="email_kampus_hint">Email Kampus</string>
+    <string name="confirm_password_hint">Konfirmasi Password</string>
+    <string name="btn_register">Register</string>
+    
+    <!-- Home Screen -->
+    <string name="cart_icon">Cart Icon</string>
+    <string name="products_list">Daftar Produk</string>
+    
+    <!-- Cart Screen -->
+    <string name="cart_title">Keranjang</string>
+    <string name="total_price">Total: Rp 0</string>
+    <string name="btn_checkout">Checkout</string>
+    <string name="empty_cart">Keranjang kosong</string>
+    
+    <!-- Product Item -->
+    <string name="product_image">Gambar Produk</string>
+    <string name="product_name_placeholder">Nama Produk</string>
+    <string name="price_placeholder">Rp 0</string>
+    
+    <!-- Common -->
+    <string name="loading">Memuat...</string>
+    <string name="error">Terjadi kesalahan</string>
+    <string name="success">Berhasil</string>
+</resources>

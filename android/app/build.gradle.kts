@@ -40,6 +40,11 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+
+    // Add any module-specific dependencies here
+    dependencies {
+        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    }
 }
 
 flutter {

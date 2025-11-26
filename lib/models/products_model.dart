@@ -136,4 +136,14 @@ class ProductsModel {
       await products.add(product.toMap()); // firebase hanya mengerti data map makanya dikonversi pakai toMap() 
     }
   }
+
+}
+
+class CartItem {
+  final ProductsModel product;
+  double quantity;
+
+  CartItem({required this.product, this.quantity = 1});
+
+  double get totalPrice => product.price * quantity;
 }
