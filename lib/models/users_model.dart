@@ -15,7 +15,7 @@ class UsersModel {
 
   // konversi dari object dart ke map untuk dikirim ke firebase
   Map<String, dynamic> toMap() {
-    return {'email': email, 'fullName': fullName, 'password': password};
+    return {'userId': userId, 'email': email, 'fullName': fullName, 'password': password};
   }
 
   // konversi dari map ke object dart untuk ditampilkan di flutter dari firebase
@@ -23,7 +23,7 @@ class UsersModel {
     final data = doc.data()!;
 
     return UsersModel(
-      userId: doc.id,
+      userId: data['userId'],
       email: data['email'] ?? '',
       fullName: data['fullName'] ?? '',
       password: data['password'] ?? '',
