@@ -14,23 +14,23 @@ class _CartScreenState extends State<CartScreen> {
   // Dummy cart items
   final List<CartItem> cartItems = [
     CartItem(
-      product: Product(
-        id: '1',
+      product: ProductsModel(
+        productId: '1',
         name: 'Nasi Goreng',
         price: 15000,
-        image: 'assets/images/nasi_goreng.png',
-        description: 'Nasi goreng dengan telur dan sayuran',
+        imageUrl: 'assets/images/nasi_goreng.png',
+        category: Category.makanan,
         stock: 20,
       ),
       quantity: 2,
     ),
     CartItem(
-      product: Product(
-        id: '2',
+      product: ProductsModel(
+        productId: '2',
         name: 'Mie Goreng',
         price: 12000,
-        image: 'assets/images/mie_goreng.png',
-        description: 'Mie goreng spesial dengan bumbu khas',
+        imageUrl: 'assets/images/mie_goreng.png',
+        category: Category.makanan,
         stock: 15,
       ),
       quantity: 1,
