@@ -11,37 +11,37 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // Dummy product data
-  final List<Product> products = [
-    Product(
-      id: '1',
+  final List<ProductsModel> products = [
+    ProductsModel(
+      productId: '1',
       name: 'Nasi Goreng',
       price: 15000,
-      image: 'assets/images/nasi_goreng.png',
-      description: 'Nasi goreng dengan telur dan sayuran',
+      imageUrl: 'assets/images/nasi_goreng.png',
+      category: Category.makanan,
       stock: 20,
     ),
-    Product(
-      id: '2',
+    ProductsModel(
+      productId: '2',
       name: 'Mie Goreng',
       price: 12000,
-      image: 'assets/images/mie_goreng.png',
-      description: 'Mie goreng spesial dengan bumbu khas',
+      imageUrl: 'assets/images/mie_goreng.png',
+      category: Category.makanan,
       stock: 15,
     ),
-    Product(
-      id: '3',
+    ProductsModel(
+      productId: '3',
       name: 'Ayam Goreng',
       price: 18000,
-      image: 'assets/images/ayam_goreng.png',
-      description: 'Ayam goreng renyah dengan nasi putih',
+      imageUrl: 'assets/images/ayam_goreng.png',
+      category: Category.makanan,
       stock: 25,
     ),
-    Product(
-      id: '4',
+    ProductsModel(
+      productId: '4',
       name: 'Soto Ayam',
       price: 14000,
-      image: 'assets/images/soto_ayam.png',
-      description: 'Soto ayam hangat dengan kuah kuning',
+      imageUrl: 'assets/images/soto_ayam.png',
+      category: Category.makanan,
       stock: 30,
     ),
   ];
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildProductCard(Product product) {
+  Widget _buildProductCard(ProductsModel product) {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.surface,
