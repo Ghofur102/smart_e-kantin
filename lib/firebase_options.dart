@@ -3,7 +3,6 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -15,11 +14,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -27,9 +28,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -42,48 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static FirebaseOptions android = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_ANDROID']!,
-    appId: dotenv.env['APP_ID_ANDORID']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_ANDROID']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET_ANDROID']!,
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyDFPA_TLihSPV2l-Pco571rETEChw4Q2Go',
+    appId: '1:462552178620:android:7c776eea455f6871e055b9',
+    messagingSenderId: '462552178620',
+    projectId: 'livenotes-4e6c4',
+    storageBucket: 'livenotes-4e6c4.firebasestorage.app',
   );
 
-  static FirebaseOptions web = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_WEB_WINDOWS']!,
-    appId: dotenv.env['APP_ID_WEB_WINDOWS']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_WEB_WINDOWS']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    authDomain: dotenv.env['AUTH_DOMAIN_WEB_WINDOWS']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET_WEB_WINDOWS']!,
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCUVhUE6xK0e0-1t09dXIyOtpQowLC4GWo',
+    appId: '1:462552178620:ios:45ecfae94bfce95ee055b9',
+    messagingSenderId: '462552178620',
+    projectId: 'livenotes-4e6c4',
+    storageBucket: 'livenotes-4e6c4.firebasestorage.app',
+    iosBundleId: 'com.example.uasPraktikum',
   );
-
-  static FirebaseOptions macos = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_APPLE']!,
-    appId: dotenv.env['APP_ID_APPLE']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_APPLE']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET_APPLE'],
-    iosBundleId: dotenv.env['IOS_BUNDLE_ID'],
-  );
-
-  static FirebaseOptions ios = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_APPLE']!,
-    appId: dotenv.env['APP_ID_APPLE']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_APPLE']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET_APPLE'],
-    iosBundleId: dotenv.env['IOS_BUNDLE_ID'],
-  );
-
-  static FirebaseOptions windows = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_WEB_WINDOWS']!,
-    appId: dotenv.env['APP_ID_WEB_WINDOWS']!,
-    messagingSenderId: dotenv.env['MESSAGING_SENDER_ID_WEB_WINDOWS']!,
-    projectId: dotenv.env['PROJECT_ID']!,
-    authDomain: dotenv.env['AUTH_DOMAIN_WEB_WINDOWS']!,
-    storageBucket: dotenv.env['STORAGE_BUCKET_WEB_WINDOWS']!,
-  );
-
 }
